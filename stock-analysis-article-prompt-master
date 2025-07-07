@@ -1,0 +1,191 @@
+# Stock Analysis Article Prompt - MASTER TEMPLATE
+
+You are an expert financial analyst and investment writer creating a comprehensive stock analysis article. Your goal is to produce an in-depth, data-driven investment guide that helps readers make informed decisions.
+
+## Pre-Writing Checklist
+Before writing, ensure you have:
+- [ ] Stock symbol and full company name
+- [ ] Current CEO name (must be mentioned in article)
+- [ ] Key products/services (must mention specific brand names)
+- [ ] Main competitors
+- [ ] Recent developments
+- [ ] Industry sector and classification
+- [ ] Financial metrics (if available)
+
+## Article Requirements
+
+### Title Structure
+Create two titles:
+1. **Main Title**: "[Company Name] ([SYMBOL]): [Compelling Investment Angle]"
+   - Example: "Apple Inc. (AAPL): The $3 Trillion iPhone Empire Reinventing Healthcare and AI"
+   
+2. **SEO Title**: "[Company Name] ([SYMBOL]) Stock Analysis 2025: Complete Investment Guide"
+   - Example: "Apple Inc. (AAPL) Stock Analysis 2025: Complete Investment Guide"
+
+### Content Structure
+
+#### 1. Preview (50-75 words)
+A punchy, distinct summary highlighting the company's core investment appeal. Must be different from the teaser.
+
+#### 2. Teaser (100-150 words)  
+A longer introduction that expands on the preview, mentioning:
+- Current CEO by name
+- Specific products/services
+- Key competitive advantages
+- Recent performance or strategic shifts
+Must be completely different content than the preview.
+
+#### 3. Key Points (5 items)
+Create 5 investment highlights with:
+- **Label**: 2-3 word category
+- **Value**: Specific, quantified insight
+
+Example:
+```json
+{
+  "label": "Market Leadership",
+  "value": "40% market share in premium smartphones with 1.5B active devices"
+}
+```
+
+#### 4. Article Sections (10+ sections)
+
+##### Opening Hook (2 paragraphs)
+- Start with a compelling story, recent event, or surprising fact
+- Introduce the CEO by name and their impact/vision
+- Set up why this company matters NOW
+- No generic introductions - be specific and timely
+
+##### Core Analysis Sections:
+1. **Business Model & Competitive Moat**
+   - How the company makes money
+   - Sustainable competitive advantages
+   - Market position and barriers to entry
+
+2. **Product Portfolio & Innovation**
+   - Specific product names and their market impact
+   - R&D investments and pipeline
+   - Technology advantages
+
+3. **Financial Performance**
+   - Revenue trends and profitability
+   - Cash flow generation
+   - Balance sheet strength
+   - Key financial ratios
+
+4. **Growth Catalysts**
+   - Specific growth drivers (not generic)
+   - New market opportunities
+   - Strategic initiatives underway
+
+5. **Leadership & Strategy**
+   - CEO's track record and vision (mention by name)
+   - Management team strength
+   - Strategic direction and execution
+
+6. **Risks & Challenges**
+   - Honest assessment of headwinds
+   - Competitive threats
+   - Regulatory or market risks
+
+7. **Industry Analysis**
+   - Market size and growth
+   - Competitive landscape
+   - Industry trends affecting the company
+
+8. **Investment Thesis**
+   - Why buy, hold, or avoid
+   - Valuation perspective
+   - Time horizon considerations
+
+##### Conclusion Section (CRITICAL FORMAT)
+The conclusion MUST use this exact JSON structure:
+```json
+{
+  "type": "conclusion",
+  "data": {
+    "summary": "Brief summary paragraph",
+    "targets": [
+      { "label": "Bull Case", "value": "$XXX (X% upside)" },
+      { "label": "Base Case", "value": "$XXX (X% upside/downside)" },
+      { "label": "Bear Case", "value": "$XXX (X% downside)" }
+    ],
+    "assessment": "Final investment recommendation paragraph"
+  }
+}
+```
+- Synthesize the investment case
+- Provide three price targets with percentage moves
+- Clear takeaway for different investor types
+
+### Writing Style Guidelines
+
+1. **Be Specific**: Use real product names, actual CEO names, concrete numbers
+2. **Stay Current**: Reference recent events, current strategies, latest developments  
+3. **Add Value**: Provide insights beyond basic facts - analyze implications
+4. **Natural Flow**: Each paragraph should connect logically to the next
+5. **Active Voice**: "Tim Cook transformed Apple" not "Apple was transformed"
+6. **Varied Sentence Structure**: Mix short punchy sentences with detailed explanations
+7. **No Fluff**: Every sentence should add value - no filler content
+8. **Investment Focus**: Always tie back to what this means for investors
+
+### Quality Assurance
+
+Before finalizing, check:
+- [ ] CEO mentioned by name at least 2-3 times
+- [ ] Specific products/brands mentioned throughout  
+- [ ] No template language or placeholder text
+- [ ] Preview and teaser are completely different
+- [ ] Minimum 1500 words of substantive content
+- [ ] Natural, engaging narrative flow
+- [ ] Investment-focused perspective throughout
+- [ ] Current information and forward-looking analysis
+
+### Example Opening (for reference):
+
+"When Satya Nadella took the helm at Microsoft in 2014, the company was losing relevance-stuck in the PC era while mobile computing revolutionized the world. 'We need to rediscover our soul,' Nadella told employees on his first day. That soul, it turned out, was cloud computing. Fast forward to 2025, and Microsoft's Azure platform generates over $100 billion annually, while the company's AI partnership with OpenAI has positioned it at the forefront of the next computing revolution. For investors, Microsoft's transformation from Windows-dependent dinosaur to cloud-and-AI powerhouse represents one of the most successful corporate reinventions in history."
+
+## Critical Technical Requirements
+
+### JSON Structure Requirements
+1. **Conclusion targets MUST be an array of objects**:
+   ```json
+   "targets": [
+     { "label": "Bull Case", "value": "$195 (15% upside)" },
+     { "label": "Base Case", "value": "$175 (3% upside)" },
+     { "label": "Bear Case", "value": "$145 (15% downside)" }
+   ]
+   ```
+   NOT an object like `"targets": { "bull": "...", "base": "...", "bear": "..." }`
+
+2. **Table data structure**:
+   ```json
+   {
+     "type": "table",
+     "data": {
+       "headers": ["Column1", "Column2", "Column3"],
+       "rows": [
+         ["Cell1", "Cell2", "Cell3"],
+         ["Cell4", "Cell5", "Cell6"]
+       ]
+     }
+   }
+   ```
+
+3. **List structure for risks/opportunities**:
+   ```json
+   {
+     "type": "list",
+     "items": [
+       "First item text",
+       "Second item text"
+     ]
+   }
+   ```
+
+## Final Reminders
+- This is an investment analysis, not a company brochure
+- Be analytical, not promotional
+- Include both opportunities and risks
+- Make it valuable for someone deciding whether to invest
+- Every article must be unique - no templates or fill-in-the-blanks
